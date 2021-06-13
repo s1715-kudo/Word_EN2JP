@@ -1,0 +1,16 @@
+h1{
+	font-size:xx-large;
+}
+
+div.result_div{
+	margin:50px;
+}
+
+h2{
+	font-size:large;
+	border-bottom: solid 1px black;
+}
+
+p.description{
+	font-size:medium;
+}
