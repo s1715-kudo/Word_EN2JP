@@ -5,10 +5,9 @@ function getSearchWord(url){
 		url: url,
 		dataType: 'json',
 		async: false,
-		success: function(json) {
-			r = json;
-		}
-	});
+	}).done(function(data){
+		r = data;
+	})
 	return r;
 }
 
@@ -29,18 +28,16 @@ function searchWord(word,dic_url,keys){
 
 function wordArray(word,mydata){
 	var r={};
-	
-	if("url" in mydata && "keys" in mydata){
-		//////自作辞典
-		site_url=mydata["url"];
-		r=Object.assign(r,searchWord(word,site_url,mydata["keys"]));
+	for(i=0;i<mydata.length;i++){
+		if("url" in mydata[i] && "keys" in mydata[i]){
+			//////自作辞典
+			site_url=mydata[i]["url"];
+			r=Object.assign(r,searchWord(word,site_url,mydata[i]["keys"]));
+		}
 	}
-	
 	
 	//////埋め込みの辞典
 	site_url='https://script.google.com/macros/s/AKfycbzNaCRvzlIq0DSx7wN99CgBdT38d7mxqpZzGNN-bSnF50exVuWSmDWFFSTdEOF1wTWKRw/exec?text=';
 	r=Object.assign(r,searchWord(word,site_url,["data"]));
-	
 	return r
 }
-

@@ -3,15 +3,16 @@ h1{
 	font-size:xx-large;
 }
 
-div.result_div{
+div.json_block{
 	margin:50px;
 }
 
-h2{
-	font-size:large;
+p.json_keyname{
+	font-size:x-large;
 	border-bottom: solid 1px black;
+	font-weight: bold;
 }
 
-p.description{
+p.json_body{
 	font-size:medium;
 }

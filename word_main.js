@@ -8,20 +8,17 @@ if(word!=""){
 	var r=wordArray(word,mydata);
 
 	var display_data="<h1>"+word+"</h1>"
-	for(var d in r){
-		display_data+="<div class='result_div' id='result_"+d+"'><h2>"+d+"</h2><p class='description'>"+r[d]+"</p></div>";
-	}
-	
+	display_data+=addDisplayJSONText(word,r,0)
 	
 	if(imgflag || speakflag){
-		display_data+="<div class='result_div' id='img_link'><h2>Get informed about \""+word+"\"</h2>"
+		display_data+="<div class='json_block' id='word_info'><p class='json_keyname json_nest_0'>Get informed about \""+word+"\"</p>"
 	}
 	if(imgflag){
-		display_data+="<p class='description'><a href='https://images.search.yahoo.com/search/images;?p="+word+"' target='_blank'>Search Image by yahoo!</a></p>"
-		display_data+="<p class='description'><a href='https://www.google.co.jp/search?tbm=isch&q="+word+"' target='_blank'>Search Image by Google</a></p>";
+		display_data+="<p class='json_body'><a href='https://images.search.yahoo.com/search/images;?p="+word+"' target='_blank'>Search Image by yahoo!</a></p>"
+		display_data+="<p class='json_body'><a href='https://www.google.co.jp/search?tbm=isch&q="+word+"' target='_blank'>Search Image by Google</a></p>";
 	}
 	if(speakflag){
-		display_data+="<p class='description'><button onclick='speak();'>Check the pronunciation</button></p>";
+		display_data+="<p class='json_body'><button onclick='speak();'>Check the pronunciation</button></p>";
 	}
 	if(imgflag || speakflag){
 		display_data+="</div>"

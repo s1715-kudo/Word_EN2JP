@@ -15,3 +15,26 @@ function setKeyinit(key,value){
 	return url_key;
 }
 
+function addDisplayJSONText(name,json,n){
+	var text=""
+	for(i in json){
+		////i
+		////json[i]
+		
+		text+="<div class='json_block' id='json_"+name+"_"+i+"'>"
+		text+="<p class='json_keyname json_nest_"+n+"'>"+i+"</p>"
+		if(typeof(json[i])!="object"){
+			text+="<p class='json_body'>"+json[i]+"</p>"
+		}
+		else{
+			text+=addDisplayJSONText(name,json[i],n+1)
+		}
+		
+		text+="</div>"
+	}
+	return text;
+}
+
+function displayJSONText(htmlId,name,json){
+	document.getElementById(htmlId).innerHTML=addDisplayJSONText(name,json,0)
+}
