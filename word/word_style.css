@@ -1,0 +1,18 @@
+h1{
+	margin:50px;
+	font-size:xx-large;
+}
+
+div.json_block{
+	margin:50px;
+}
+
+p.json_keyname{
+	font-size:x-large;
+	border-bottom: solid 1px black;
+	font-weight: bold;
+}
+
+p.json_body{
+	font-size:medium;
+}
