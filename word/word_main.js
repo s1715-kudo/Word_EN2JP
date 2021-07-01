@@ -19,8 +19,8 @@ if(word!=""){
 		display_data+="<p class='json_body'><a href='https://google.com/search?q="+word+"&hl=en&gl="+searchgl+"' target='_blank'>Search by Google</a></p>"
 	}
 	if(imgflag){
+		display_data+="<p class='json_body'><a href='https://www.google.co.jp/search?tbm=isch&q="+word+"&hl=en&gl="+searchgl+"' target='_blank'>Search Image by Google</a></p>";
 		display_data+="<p class='json_body'><a href='https://images.search.yahoo.com/search/images;?p="+word+"' target='_blank'>Search Image by yahoo!</a></p>"
-		display_data+="<p class='json_body'><a href='https://www.google.co.jp/search?tbm=isch&q="+word+"' target='_blank'>Search Image by Google</a></p>";
 	}
 	if(speakflag){
 		display_data+="<p class='json_body'><button onclick='speak();'>Check the pronunciation</button></p>";
