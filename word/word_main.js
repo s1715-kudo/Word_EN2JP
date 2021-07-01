@@ -1,6 +1,8 @@
 var mydata=JSON.parse(setKeyinit("dic","{}"));
 var imgflag=setKeyinit("img","true")=="true";
 var speakflag=setKeyinit("speak","true")=="true";
+var searchflag=setKeyinit("searchflag","true")=="true";
+var searchgl=setKeyinit("searchgl","uk");
 
 var word=setKeyinit("word","");
 
@@ -10,8 +12,11 @@ if(word!=""){
 	var display_data="<h1>"+word+"</h1>"
 	display_data+=addDisplayJSONText(word,r,0)
 	
-	if(imgflag || speakflag){
+	if(imgflag || speakflag || searchflag){
 		display_data+="<div class='json_block' id='word_info'><p class='json_keyname json_nest_0'>Get informed about \""+word+"\"</p>"
+	}
+	if(searchflag){
+		display_data+="<p class='json_body'><a href='https://google.com/search?q="+word+"&hl=en&gl="+searchgl+"' target='_blank'>Search by Google</a></p>"
 	}
 	if(imgflag){
 		display_data+="<p class='json_body'><a href='https://images.search.yahoo.com/search/images;?p="+word+"' target='_blank'>Search Image by yahoo!</a></p>"
