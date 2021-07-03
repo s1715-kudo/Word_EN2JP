@@ -2,7 +2,7 @@ var cookie_word_json=get_json('word_json',"{}");
 cookie_word_json=JSON.parse(cookie_word_json)
 
 function get_json(key,init){
-	var r=Cookies.get(key);
+	var r=zcookies.get(key)
 	if (r===undefined||r==null)r=init
 	return r;
 }
@@ -58,9 +58,7 @@ function wordArray(word,mydata){
 		cookie_word_json[word]=r
 		
 		console.log(cookie_word_json)
-		console.log(JSON.stringify(cookie_word_json))
-		console.log(JSON.stringify(cookie_word_json).length)
-		Cookies.set('word_json',cookie_word_json,{expires:7});
+		zcookies.set('word_json',cookie_word_json,{expires:60*60*24*7});
 	}
 	
 	return r;
