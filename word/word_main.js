@@ -35,7 +35,7 @@ if(word!=""){
 }
 
 if(nword!=""){
-	saveCookie(word,mydata);
+	saveCookie(nword,mydata);
 }
 
 function speak(){
