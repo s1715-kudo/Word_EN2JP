@@ -1,6 +1,12 @@
-var cookie_word_json=zcookies.get('word_json');
-console.log(cookie_word_json)
+var cookie_word_json=get_json('word_json',{});
 cookie_word_json=JSON.parse(JSON.stringify(cookie_word_json))
+
+function get_json(key,init){
+	var r=zcookies.get(key)
+	if (r===undefined||r==null)r=init
+	return r;
+}
+
 
 function getSearchWord(url){
 	var r={};
