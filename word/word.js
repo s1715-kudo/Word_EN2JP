@@ -1,6 +1,7 @@
 var cookie_word_json=Cookies.get('word_json');
 if (cookie_word_json===undefined||cookie_word_json==null)cookie_word_json="{}"
 cookie_word_json=JSON.parse(cookie_word_json)
+console.log("a")
 console.log(cookie_word_json)
 
 function getSearchWord(url){
@@ -51,6 +52,8 @@ function wordArray(word,mydata){
 		r=Object.assign(r,searchWord(word,site_url,["data"]));
 		
 		cookie_word_json[word]=r
+		console.log("b")
+		console.log(cookie_word_json)
 		Cookies.set('word_json',cookie_word_json,{expires:7});
 	}
 	
