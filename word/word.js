@@ -35,36 +35,18 @@ function searchWord(word,dic_url,keys){
 
 function wordArray(word,mydata){
 	var r={};
-	
-	var cookie_word_json=get_json('word_json',{});
-	cookie_word_json=JSON.parse(JSON.stringify(cookie_word_json))
-	console.log(cookie_word_json)
-	
-	if(word in cookie_word_json){
-		r=cookie_word_json[word]
-	}
-	else{
-		for(i=0;i<mydata.length;i++){
-			if("url" in mydata[i] && "keys" in mydata[i]){
-				//////自作辞典
-				site_url=mydata[i]["url"];
-				r=Object.assign(r,searchWord(word,site_url,mydata[i]["keys"]));
-			}
+	for(i=0;i<mydata.length;i++){
+		if("url" in mydata[i] && "keys" in mydata[i]){
+			//////自作辞典
+			site_url=mydata[i]["url"];
+			r=Object.assign(r,searchWord(word,site_url,mydata[i]["keys"]));
 		}
-		
-		//////埋め込みの辞典
-		site_url='https://script.google.com/macros/s/AKfycbzNaCRvzlIq0DSx7wN99CgBdT38d7mxqpZzGNN-bSnF50exVuWSmDWFFSTdEOF1wTWKRw/exec?text=';
-		r=Object.assign(r,searchWord(word,site_url,["data"]));
 	}
 	
-	return r;
-}
-
-function saveCookie(word,mydata){
-	console.log("abc")
-	var r=wordArray(word,mydata);
-	var cookie_word_json={};
-	cookie_word_json[word]=r;
-	zcookies.set('word_json',cookie_word_json,{expires:60*60*24});
+	//////埋め込みの辞典
+	site_url='https://script.google.com/macros/s/AKfycbzNaCRvzlIq0DSx7wN99CgBdT38d7mxqpZzGNN-bSnF50exVuWSmDWFFSTdEOF1wTWKRw/exec?text=';
+	r=Object.assign(r,searchWord(word,site_url,["data"]));
+	
+	
 	return r;
 }

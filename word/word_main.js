@@ -5,7 +5,6 @@ var searchflag=setKeyinit("searchflag","true")=="true";
 var searchgl=setKeyinit("searchgl","uk");
 
 var word=setKeyinit("word","");
-var nword=setKeyinit("nword","");
 
 if(word!=""){
 	var r=wordArray(word,mydata);
@@ -41,10 +40,3 @@ function speak(){
 	u.text=word;
 	speechSynthesis.speak(u)
 }
-
-
-$(window).on('load', function(){
-	if(nword!=""){
-		saveCookie(nword,mydata);
-	}
-});
