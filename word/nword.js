@@ -1,5 +1,3 @@
-var nword=setKeyinit("nword","");
-
-if(nword!=""){
+self.addEventListener('message',(nword,mydata)=>{
 	saveCookie(nword,mydata);
-}
+});
