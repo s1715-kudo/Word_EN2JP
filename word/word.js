@@ -4,6 +4,7 @@ cookie_word_json=JSON.parse(cookie_word_json)
 function get_json(key,init){
 	var r=Cookies.get(key);
 	if (r===undefined||r==null)r=init
+	return r;
 }
 
 
