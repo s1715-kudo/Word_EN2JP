@@ -62,7 +62,9 @@ function wordArray(word,mydata){
 
 function saveCookie(word,mydata){
 	console.log("abc")
-	cookie_word_json={};
-	cookie_word_json[word]=wordArray(word,mydata);
+	var r=wordArray(word,mydata);
+	var cookie_word_json={};
+	cookie_word_json[word]=r;
 	zcookies.set('word_json',cookie_word_json,{expires:60*60*24});
+	return r;
 }
