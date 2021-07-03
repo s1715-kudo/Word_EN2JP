@@ -1,6 +1,20 @@
-var cookie_word_json=Cookies.get('word_json');
-if (cookie_word_json===undefined||cookie_word_json==null)cookie_word_json="{}"
+var cookie_word_json=get_json('word_json',"{}");
 cookie_word_json=JSON.parse(cookie_word_json)
+
+function get_json(key,init){
+	var r=Cookies.get(key);
+	if (r===undefined||r==null)r=init
+}
+
+function get_cookie_word_json(){
+
+
+}
+
+function set_cookie_word_json(){
+
+}
+
 
 function getSearchWord(url){
 	var r={};
