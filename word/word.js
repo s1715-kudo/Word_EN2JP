@@ -1,7 +1,6 @@
 var cookie_word_json=Cookies.get('word_json');
 if (cookie_word_json===undefined||cookie_word_json==null)cookie_word_json="{}"
 cookie_word_json=JSON.parse(cookie_word_json)
-console.log(cookie_word_json)
 
 function getSearchWord(url){
 	var r={};
@@ -34,11 +33,10 @@ function searchWord(word,dic_url,keys){
 function wordArray(word,mydata){
 	var r={};
 	
-	if(word in cookie_word_json){
+	if(word in cookie_word_json){//cookieにある場合
 		r=cookie_word_json[word]
-		console.log(r)
 	}
-	else{
+	else{//cookieにない場合
 		for(i=0;i<mydata.length;i++){
 			if("url" in mydata[i] && "keys" in mydata[i]){
 				//////自作辞典
@@ -50,6 +48,9 @@ function wordArray(word,mydata){
 		//////埋め込みの辞典
 		site_url='https://script.google.com/macros/s/AKfycbzNaCRvzlIq0DSx7wN99CgBdT38d7mxqpZzGNN-bSnF50exVuWSmDWFFSTdEOF1wTWKRw/exec?text=';
 		r=Object.assign(r,searchWord(word,site_url,["data"]));
+		
+		cookie_word_json[word]=r
+		Cookies.set('word_json',cookie_word_json);
 	}
 	
 	return r;
