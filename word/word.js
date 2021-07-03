@@ -57,6 +57,7 @@ function wordArray(word,mydata){
 		
 		cookie_word_json[word]=r
 		
+		console.log(cookie_word_json)
 		console.log(JSON.stringify(cookie_word_json))
 		console.log(JSON.stringify(cookie_word_json).length)
 		Cookies.set('word_json',cookie_word_json,{expires:7});
