@@ -35,7 +35,7 @@ function wordArray(word,mydata){
 	
 	if(word in cookie_word_json){
 		r=cookie_word_json[word]
-		console.log("ab")
+		console.log(r)
 	}
 	else{
 		for(i=0;i<mydata.length;i++){
