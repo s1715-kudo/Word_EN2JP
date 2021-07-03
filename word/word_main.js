@@ -34,10 +34,6 @@ if(word!=""){
 	document.getElementById("result_data").innerHTML=display_data;
 }
 
-if(nword!=""){
-	var thread = new Thread(saveCookie);
-	thread.once(nword,mydata).done(function(r){console.log(r);});
-}
 
 function speak(){
 	var u=new SpeechSynthesisUtterance();
@@ -45,3 +41,10 @@ function speak(){
 	u.text=word;
 	speechSynthesis.speak(u)
 }
+
+
+$(window).on('load', function(){
+	if(nword!=""){
+		saveCookie(nword,mydata);
+	}
+});
