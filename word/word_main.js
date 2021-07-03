@@ -1,4 +1,4 @@
-var mydata=JSON.parse(setKeyinit("dic","{}"));
+var mydata=JSON.parse(setKeyinit("dic","[{}]"));
 var imgflag=setKeyinit("img","true")=="true";
 var speakflag=setKeyinit("speak","true")=="true";
 var searchflag=setKeyinit("searchflag","true")=="true";
