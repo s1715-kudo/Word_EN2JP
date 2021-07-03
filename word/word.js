@@ -61,6 +61,7 @@ function wordArray(word,mydata){
 }
 
 function saveCookie(word,mydata){
+	console.log("abc")
 	cookie_word_json={};
 	cookie_word_json[word]=wordArray(word,mydata);
 	zcookies.set('word_json',cookie_word_json,{expires:60*60*24});
