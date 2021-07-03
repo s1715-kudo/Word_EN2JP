@@ -1,0 +1,1 @@
+saveCookie(nword,mydata);
