@@ -1,5 +1,6 @@
 var cookie_word_json=get_json('word_json',"{}");
-cookie_word_json=JSON.parse(cookie_word_json)
+cookie_word_json=JSON.parse(JSON.stringify(cookie_word_json))
+console.log(cookie_word_json)
 
 function get_json(key,init){
 	var r=zcookies.get(key)
