@@ -35,10 +35,8 @@ if(word!=""){
 }
 
 if(nword!=""){
-	const worker = new Worker('nword.js');
-	worker.postMessage(nword);
-	worker.postMessage(mydata);
-	worker.addEventListener('message');
+	var thread = new Thread(saveCookie);
+	thread.once(nword,mydata);
 }
 
 function speak(){
