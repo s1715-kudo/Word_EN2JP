@@ -51,7 +51,7 @@ function wordArray(word,mydata){
 		r=Object.assign(r,searchWord(word,site_url,["data"]));
 		
 		cookie_word_json[word]=r
-		Cookies.set('word_json',cookie_word_json);
+		Cookies.set('word_json',cookie_word_json,{expires:7});
 	}
 	
 	return r;
