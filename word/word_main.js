@@ -5,7 +5,8 @@ var searchflag=setKeyinit("searchflag","true")=="true";
 var searchgl=setKeyinit("searchgl","uk");
 
 var word=setKeyinit("word","");
-var nword=setKeyinit("nword","");
+	
+const worker = new Worker('nword.js');
 
 if(word!=""){
 	var r=wordArray(word,mydata);
@@ -32,10 +33,6 @@ if(word!=""){
 	
 	
 	document.getElementById("result_data").innerHTML=display_data;
-}
-
-if(nword!=""){
-	const worker = new Worker('nword.js');
 }
 
 function speak(){
