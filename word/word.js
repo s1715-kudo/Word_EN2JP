@@ -6,15 +6,6 @@ function get_json(key,init){
 	if (r===undefined||r==null)r=init
 }
 
-function get_cookie_word_json(){
-
-
-}
-
-function set_cookie_word_json(){
-
-}
-
 
 function getSearchWord(url){
 	var r={};
@@ -64,7 +55,9 @@ function wordArray(word,mydata){
 		r=Object.assign(r,searchWord(word,site_url,["data"]));
 		
 		cookie_word_json[word]=r
+		
 		console.log(JSON.stringify(cookie_word_json))
+		console.log(JSON.stringify(cookie_word_json).length)
 		Cookies.set('word_json',cookie_word_json,{expires:7});
 	}
 	
