@@ -36,7 +36,7 @@ if(word!=""){
 
 if(nword!=""){
 	var thread = new Thread(saveCookie);
-	thread.once(nword,mydata);
+	thread.once(nword,mydata).done(function(r){console.log(r);});
 }
 
 function speak(){
