@@ -38,6 +38,7 @@ function wordArray(word,mydata){
 	
 	var cookie_word_json=get_json('word_json',{});
 	cookie_word_json=JSON.parse(JSON.stringify(cookie_word_json))
+	console.log(cookie_word_json)
 	
 	if(word in cookie_word_json){
 		r=cookie_word_json[word]
